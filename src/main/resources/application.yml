@@ -1,3 +1,7 @@
+spring:
+  thymeleaf:
+    mode: LEGACYHTML5
+
 facebook:
   client:
     clientId: 1861225734138705
