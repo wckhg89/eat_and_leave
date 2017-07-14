@@ -24,6 +24,13 @@
         WHERE user.user_idx = #{value}
     </select>
 
+    <select id="findByUserKey" resultType="com.guppy.repository.entity.User">
+        SELECT
+        *
+        FROM user
+        WHERE user.user_key = #{userKey}
+    </select>
+
     <select id="findByUserName" resultType="com.guppy.repository.entity.User">
         SELECT
         user_idx AS userIdx,

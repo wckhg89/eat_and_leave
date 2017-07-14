@@ -16,6 +16,8 @@ public interface UserMapper {
 
     List<User> findByUserName(@Param("userName") String userName);
 
+    User findByUserKey(@Param("userKey") int userKey);
+
     User findOne(Long id);
 
     Boolean exists(Long id);

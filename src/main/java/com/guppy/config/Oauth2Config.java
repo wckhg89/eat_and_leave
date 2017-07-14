@@ -37,12 +37,12 @@ public class Oauth2Config extends WebSecurityConfigurerAdapter {
         // @formatter:off
         http.antMatcher("/**")
                 .authorizeRequests()
-                .antMatchers("/", "/login**", "/dist/**", "/user")
+                .antMatchers("/", "/login**", "/dist/**", "/h2-console/**")
                 .permitAll().anyRequest()
                 .authenticated().and().exceptionHandling()
                 .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/")).and().logout()
-                .logoutSuccessUrl("/").permitAll().and().csrf()
-                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and()
+                .logoutSuccessUrl("/").permitAll().and().csrf().disable()
+                //.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and()
                 .addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class);
         // @formatter:on
     }
@@ -54,6 +54,8 @@ public class Oauth2Config extends WebSecurityConfigurerAdapter {
         facebookFilter.setRestTemplate(facebookTemplate);
         facebookFilter.setTokenServices(
                 new UserInfoTokenServices(facebookResource().getUserInfoUri(), facebook().getClientId()));
+        facebookFilter.setAuthenticationSuccessHandler((request,response, authentication) -> response.sendRedirect("/facebook/complete"));
+        facebookFilter.setAuthenticationFailureHandler((request,response, authentication) -> response.sendRedirect("/"));
 
         return facebookFilter;
     }
