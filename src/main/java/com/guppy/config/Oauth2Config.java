@@ -37,7 +37,7 @@ public class Oauth2Config extends WebSecurityConfigurerAdapter {
         // @formatter:off
         http.antMatcher("/**")
                 .authorizeRequests()
-                .antMatchers("/", "/login**", "/dist/**")
+                .antMatchers("/", "/login**", "/dist/**", "/user")
                 .permitAll().anyRequest()
                 .authenticated().and().exceptionHandling()
                 .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/")).and().logout()

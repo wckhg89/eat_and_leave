@@ -1,16 +1,19 @@
-package com.guppy;
+package com.guppy.mapper;
 
 import com.guppy.repository.UserMapper;
 import com.guppy.repository.entity.User;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.security.Principal;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -25,6 +28,8 @@ import static org.junit.Assert.assertNotNull;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class UserMapperTest {
+
+    private static Logger logger = LoggerFactory.getLogger(UserMapperTest.class);
 
     @Autowired
     private UserMapper memberMapper;
@@ -61,6 +66,18 @@ public class UserMapperTest {
 
         List<User> deleteUsers = memberMapper.findByUserName("stunstun");
         assertEquals(0, deleteUsers.size());
+
+    }
+
+    @Test
+    public void principal_저장_테스트 () {
+        Principal principal = new Principal() {
+            @Override
+            public String getName() {
+                return "TestUser";
+            }
+        };
+
 
     }
 

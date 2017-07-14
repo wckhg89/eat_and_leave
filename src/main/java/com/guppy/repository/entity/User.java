@@ -9,11 +9,18 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode(of = {"id"})
+@EqualsAndHashCode(of = {"userIdx"})
 @NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
-    private Long id;
+    private Long userIdx;
     private String userName;
+    private String userPrincipal;
+    private String socialType;
+    private String userKey;
+    private String userProfileUrl;
+    private String userUrl;
+
 
 }
