@@ -1,4 +1,6 @@
 spring:
+  datasource:
+    schema: classpath:import.sql
   thymeleaf:
     mode: LEGACYHTML5
 
