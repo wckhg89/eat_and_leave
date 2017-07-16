@@ -2,6 +2,8 @@ package com.guppy.repository.entity;
 
 import lombok.*;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.HashMap;
 
@@ -21,7 +23,7 @@ public class User {
     private String userName;
     private String userPrincipal;
     private String socialType;
-    private int userKey;
+    private String userKey;
     private String userProfileUrl;
     private String userUrl;
 
@@ -63,13 +65,24 @@ public class User {
     }
 
     public void setUserKey() {
-        this.userKey = this.hashCode();
+        final String salt = "GUPPYGUPPYGUPPYGUPPYGUPPYGUPPYGUPPY";
+
+        StringBuilder builder = new StringBuilder();
+        builder.append(userName).append(userPrincipal).append(socialType);
+        BCrypt
+        this.userKey = BCrypt.hashpw(builder.toString(), salt);
+    }
+
+    public void checkUserKey () {
+
     }
 
     @Override
     public int hashCode() {
         StringBuilder builder = new StringBuilder();
         builder.append(userName).append(userPrincipal).append(socialType);
+
+
 
         return builder.hashCode();
     }

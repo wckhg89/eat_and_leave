@@ -24,14 +24,14 @@
         WHERE user.user_idx = #{value}
     </select>
 
-    <select id="findByUserKey" resultType="com.guppy.repository.entity.User">
+    <select id="findByUserKey" resultType="com.guppy.repository.entity.User" parameterType="String">
         SELECT
         *
         FROM user
         WHERE user.user_key = #{userKey}
     </select>
 
-    <select id="findByUserName" resultType="com.guppy.repository.entity.User">
+    <select id="findByUserName" resultType="com.guppy.repository.entity.User" parameterType="String">
         SELECT
         user_idx AS userIdx,
         user_name AS userName

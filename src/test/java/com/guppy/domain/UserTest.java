@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 import java.util.Map;
+import static org.junit.Assert.*;
 
 /**
  * Created by kanghonggu on 2017. 7. 14..
@@ -36,6 +37,9 @@ public class UserTest {
         User loginUser = User.initUser(auth);
 
         logger.info("loginUser Info - {}", loginUser);
+
+        assertEquals("$2a$10$zXedpCMhToqXobX5qP.SH.Y66URkv3p5yqLyXkq968H/.f1eb6hBO", loginUser.getUserKey());
+
     }
 
     private Authentication getAuthentication() {

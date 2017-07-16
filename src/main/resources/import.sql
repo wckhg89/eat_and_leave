@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `user_name` varchar(255) NOT NULL,
   `user_principal` varchar(255) NOT NULL,
   `social_type` varchar(255) NOT NULL,
-  `user_key` bigint(11) DEFAULT NULL,
+  `user_key` varchar(255) DEFAULT NULL,
   `user_profile_url` varchar(255) DEFAULT NULL,
   `user_url` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_idx`)
