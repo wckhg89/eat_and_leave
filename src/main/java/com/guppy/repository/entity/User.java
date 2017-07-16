@@ -65,27 +65,13 @@ public class User {
     }
 
     public void setUserKey() {
-        final String salt = "GUPPYGUPPYGUPPYGUPPYGUPPYGUPPYGUPPY";
+        final String salt = "$2a$10$/L4lnbQy2Myy//jnnuHBNO";
 
         StringBuilder builder = new StringBuilder();
         builder.append(userName).append(userPrincipal).append(socialType);
-        BCrypt
         this.userKey = BCrypt.hashpw(builder.toString(), salt);
     }
 
-    public void checkUserKey () {
-
-    }
-
-    @Override
-    public int hashCode() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(userName).append(userPrincipal).append(socialType);
-
-
-
-        return builder.hashCode();
-    }
 
 
 }
