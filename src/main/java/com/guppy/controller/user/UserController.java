@@ -1,6 +1,5 @@
 package com.guppy.controller.user;
 
-import com.guppy.repository.entity.User;
 import com.guppy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;

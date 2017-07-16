@@ -27,15 +27,15 @@ public class User {
     private String userProfileUrl;
     private String userUrl;
 
-    private User (Authentication authentication) {
+    private User(Authentication authentication) {
         this.setUserInfo(authentication);
     }
 
-    public static User initUser (Authentication authentication) {
+    public static User initUser(Authentication authentication) {
         return new User(authentication);
     }
 
-    public void setUserInfo (Authentication authentication) {
+    public void setUserInfo(Authentication authentication) {
         HashMap<String, String> detailMap
                 = (HashMap<String, String>) authentication.getDetails();
 
@@ -47,7 +47,7 @@ public class User {
         this.setUrl();
     }
 
-    public void setUrl () {
+    public void setUrl() {
         StringBuilder builder = new StringBuilder();
 
         this.userProfileUrl = builder
@@ -69,9 +69,9 @@ public class User {
 
         StringBuilder builder = new StringBuilder();
         builder.append(userName).append(userPrincipal).append(socialType);
+
         this.userKey = BCrypt.hashpw(builder.toString(), salt);
     }
-
 
 
 }

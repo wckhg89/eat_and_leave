@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,11 +31,6 @@ public class UserTest {
     private static Logger logger = LoggerFactory.getLogger(UserTest.class);
 
     @Test
-    public void BcryptSalt () {
-        logger.info(BCrypt.gensalt());
-    }
-
-    @Test
     public void 사용자_로그인시_초기_User_도메인_초기화 () {
         Authentication auth = getAuthentication();
 
@@ -44,8 +38,8 @@ public class UserTest {
 
         logger.info("loginUser Info - {}", loginUser);
 
-        assertEquals("$2a$10$/L4lnbQy2Myy//jnnuHBNOBSB3zJpoHrrciS4CibIiCRCo3g1n8DO", loginUser.getUserKey());
 
+        assertEquals("$2a$10$/L4lnbQy2Myy//jnnuHBNOBSB3zJpoHrrciS4CibIiCRCo3g1n8DO", loginUser.getUserKey());
     }
 
     private Authentication getAuthentication() {
