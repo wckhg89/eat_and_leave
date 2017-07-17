@@ -44,6 +44,9 @@ public class Oauth2Config extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/").permitAll().and().csrf().disable()
                 //.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).and()
                 .addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class);
+
+        http.headers().frameOptions().disable();
+
         // @formatter:on
     }
 

@@ -26,6 +26,7 @@ public class UserService {
             return true;
         }
 
+        //$2a$10$/L4lnbQy2Myy//jnnuHBNORmAkEcKuVWC6wE9H62GYfpOtAo7QyI2
         userMapper.save(loginUser);
 
         return true;

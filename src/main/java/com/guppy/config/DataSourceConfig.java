@@ -46,8 +46,10 @@ public class DataSourceConfig {
         sqlSessionFactoryBean.setTypeAliasesPackage("com.guppy.repository.entity");
         sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:mybatis/mapper/*.xml"));
 
+        SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBean.getObject();
+        sqlSessionFactory.getConfiguration().setMapUnderscoreToCamelCase(true);
 
-        return sqlSessionFactoryBean.getObject();
+        return sqlSessionFactory;
     }
 
     @Bean
