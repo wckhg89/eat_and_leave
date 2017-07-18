@@ -3,7 +3,6 @@ spring:
     schema: classpath:import.sql
   thymeleaf:
     mode: LEGACYHTML5
-    la
   h2:
     console:
       enabled: true
