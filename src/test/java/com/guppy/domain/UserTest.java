@@ -38,9 +38,11 @@ public class UserTest {
 
         logger.info("loginUser Info - {}", loginUser);
 
-
         assertEquals("$2a$10$/L4lnbQy2Myy//jnnuHBNOBSB3zJpoHrrciS4CibIiCRCo3g1n8DO", loginUser.getUserKey());
     }
+
+
+
 
     private Authentication getAuthentication() {
         return new Authentication() {
