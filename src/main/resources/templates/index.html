@@ -1,22 +1,8 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="layout/default">
+<html xmlns:th="http://www.thymeleaf.org">
+<!--Config Fragment-->
+<head th:include="/fragments/config :: configFragment"/>
 
-<head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="description" content="Introducing Lollipop, a sweet new take on Android."/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
-    <title>Android</title>
-    <!-- Page styles -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css"/>
-
-    <link rel="stylesheet" href="/css/styles.css"/>
-
-</head>
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
@@ -248,14 +234,14 @@
                 </div>
             </div>
         </div>
-
+        <!--Footer Fragment-->
+        <footer th:include="/fragments/footer :: footerFragment"/>
 
     </div>
 </div>
 
-<script src="/dist/common.js"></script>
-<script src="/dist/app.js"></script>
-<script src="/dist/mdl.js"></script>
+<!--Script Include Fragment-->
+<div th:include="/fragments/include :: includeFragment"/>
 
 </body>
 </html>
