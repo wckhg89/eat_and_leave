@@ -18,18 +18,18 @@ public class UserService {
     private UserMapper userMapper;
 
 
-    public boolean loginComplete (Authentication authentication) {
+    public User loginComplete (Authentication authentication) {
         User loginUser = User.initUser(authentication);
         User dbUser = userMapper.findByUserKey(loginUser.getUserKey());
 
         if (dbUser != null) {
-            return true;
+            return loginUser;
         }
 
         //$2a$10$/L4lnbQy2Myy//jnnuHBNORmAkEcKuVWC6wE9H62GYfpOtAo7QyI2
         userMapper.save(loginUser);
 
-        return true;
+        return loginUser;
     }
 
 }
