@@ -4,7 +4,6 @@ spring:
   thymeleaf:
     mode: LEGACYHTML5
     cache: false
-
   h2:
     console:
       enabled: true
