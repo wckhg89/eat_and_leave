@@ -50,21 +50,23 @@ public class User {
     public void setUrl() {
         StringBuilder builder = new StringBuilder();
 
-        setUserProfileUrl(builder);
+        setInitUserProfileUrl(builder);
 
         builder.setLength(0);
 
-        setUserUrl(builder);
+        setInitUserUrl(builder);
     }
 
-    private void setUserUrl(StringBuilder builder) {
+
+
+    private void setInitUserUrl(StringBuilder builder) {
         this.userUrl = builder
                 .append("https://facebook.com/")
                 .append(userPrincipal)
                 .toString();
     }
 
-    private void setUserProfileUrl(StringBuilder builder) {
+    private void setInitUserProfileUrl(StringBuilder builder) {
         this.userProfileUrl = builder
                 .append("http://graph.facebook.com/")
                 .append(userPrincipal)

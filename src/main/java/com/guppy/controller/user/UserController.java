@@ -38,7 +38,7 @@ public class UserController {
         // todo : 만일 서버가 여러대이면 Redis와 같은 글로벌 캐시를 써서 세션 관리를 해야함
         httpSession.setAttribute("user", user);
 
-        return "index";
+        return "redirect:/";
     }
 
     @GetMapping("/user/info")

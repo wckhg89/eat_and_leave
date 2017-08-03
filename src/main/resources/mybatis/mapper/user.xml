@@ -3,7 +3,7 @@
 
     <select id="findAll" resultType="com.guppy.repository.entity.User">
         SELECT
-    *
+        *
         FROM user
     </select>
 
