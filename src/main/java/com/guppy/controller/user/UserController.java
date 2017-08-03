@@ -8,6 +8,7 @@ import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.thymeleaf.context.WebContext;
 
 import javax.servlet.http.HttpSession;
@@ -41,8 +42,23 @@ public class UserController {
         return "redirect:/";
     }
 
-    @GetMapping("/user/info")
-    public String userInfo () {
+    @GetMapping("/user/own/info")
+    public String userOwnInfo () {
+
+        return "/user/own/info";
+    }
+
+    @GetMapping("/user/info/{userIdx}")
+    public String userInfo (@PathVariable Long userIdx,
+                            Model model) {
+
+        User user = userService.findOne(userIdx);
+
+        if (user == null) {
+            return "error";
+        }
+
+        model.addAttribute("user", user);
 
         return "/user/info";
     }

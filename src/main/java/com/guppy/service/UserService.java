@@ -35,6 +35,10 @@ public class UserService {
         return loginUser;
     }
 
+    public User findOne (Long userIdx) {
+        return userMapper.findOne(userIdx);
+    }
+
 
     public List<User> findAll () {
         List<User> users = userMapper.findAll();

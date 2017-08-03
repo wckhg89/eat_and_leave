@@ -27,7 +27,7 @@
             <div class="android-navigation-container">
                 <nav class="android-navigation mdl-navigation">
                     <a class="mdl-navigation__link mdl-typography--text-uppercase"
-                       th:href="${session.user != null} ? @{/user/info} : @{/login/facebook}">
+                       th:href="${session.user != null} ? @{/user/own/info} : @{/login/facebook}">
                         <span th:text="${session.user != null} ? ${session.user.userName} : 로그인"/>
                     </a>
                     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">소개</a>
@@ -53,7 +53,7 @@
             </span>
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link"
-               th:href="${session.user != null} ? @{/user/info} : @{/login/facebook}">
+               th:href="${session.user != null} ? @{/user/own/info} : @{/login/facebook}">
                 <span th:text="${session.user != null} ? ${session.user.userName} : 로그인"/>
             </a>
             <div class="android-drawer-separator"></div>

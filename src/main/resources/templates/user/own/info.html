@@ -7,27 +7,25 @@
 <body>
 
 <div class="android-more-section" layout:fragment="content">
-    <div class="android-card-container mdl-grid" th:each="user : ${users}">
+    <div class="android-card-container mdl-grid">
         <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
             <div class="mdl-card__media">
-                <img th:src="${user.userProfileUrl}" />
+                <img th:src="${session.user.userProfileUrl}"/>
             </div>
             <div class="mdl-card__title">
-                <h4 class="mdl-card__title-text" th:text="${user.userName}"/>
+                <h4 class="mdl-card__title-text" th:text="${session.user.userName}" />
             </div>
             <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">여가에 자기소개를 작성해주세요.</span>
+                <span class="mdl-typography--font-light mdl-typography--subhead">여기에 자기소개를 작성해주세요.</span>
             </div>
             <div class="mdl-card__actions">
-                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase"
-                   th:href="@{|/user/info/${user.userIdx}|}">
-                    자세히 보기 !!
+                <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
+                    작성글 더보기
                     <i class="material-icons">chevron_right</i>
                 </a>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 </body>

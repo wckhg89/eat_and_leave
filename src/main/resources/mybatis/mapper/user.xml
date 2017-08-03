@@ -17,8 +17,7 @@
 
     <select id="findOne" resultType="com.guppy.repository.entity.User" parameterType="Long">
         SELECT
-        user_idx AS userIdx,
-        user_name AS userName
+        *
         FROM user
         WHERE user.user_idx = #{value}
     </select>
