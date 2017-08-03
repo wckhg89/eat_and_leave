@@ -40,4 +40,10 @@ public class UserController {
 
         return "index";
     }
+
+    @GetMapping("/user/info")
+    public String userInfo () {
+
+        return "/user/info";
+    }
 }

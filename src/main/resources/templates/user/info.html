@@ -1,31 +1,46 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="/layout/layout">
 
 <body>
 
 <div class="android-more-section" layout:fragment="content">
+    <!-- Wide card with share menu button -->
+    <style>
+        .demo-card-wide.mdl-card {
+            width: 512px;
+        }
+        .demo-card-wide > .mdl-card__title {
+            color: #fff;
+            height: 176px;
+            background: url('../assets/demos/welcome_card.jpg') center / cover;
+        }
+        .demo-card-wide > .mdl-card__menu {
+            color: #fff;
+        }
+    </style>
+
     <div class="android-card-container mdl-grid">
         <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
             <div class="mdl-card__media">
-                <img src="/images/more-from-1.png">
+                <img th:src="${session.user.userProfileUrl}"/>
             </div>
             <div class="mdl-card__title">
-                <h4 class="mdl-card__title-text">Get going on Android</h4>
+                <h4 class="mdl-card__title-text" th:text="${session.user.userName}" />
             </div>
             <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Four tips to make your switch to Android quick and easy</span>
+                <span class="mdl-typography--font-light mdl-typography--subhead">여기에 자기소개를 작성해주세요.</span>
             </div>
             <div class="mdl-card__actions">
                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                    Make the switch
+                    작성글 더보기
                     <i class="material-icons">chevron_right</i>
                 </a>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 </body>

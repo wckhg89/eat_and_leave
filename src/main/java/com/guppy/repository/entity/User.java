@@ -69,6 +69,8 @@ public class User {
                 .append("http://graph.facebook.com/")
                 .append(userPrincipal)
                 .append("/picture?type=square")
+                .append("&width=240")
+                .append("&height=170")
                 .toString();
     }
 
