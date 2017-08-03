@@ -51,9 +51,7 @@ public class User {
         StringBuilder builder = new StringBuilder();
 
         setInitUserProfileUrl(builder);
-
         builder.setLength(0);
-
         setInitUserUrl(builder);
     }
 
