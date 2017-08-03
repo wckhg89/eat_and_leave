@@ -1,25 +1,26 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="/layout/layout">
 
 <body>
 
 <div class="android-more-section" layout:fragment="content">
-    <div class="android-card-container mdl-grid">
+    <div class="android-card-container mdl-grid" th:each="user : ${users}">
         <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
             <div class="mdl-card__media">
-                <img src="/images/more-from-1.png">
+                <img th:src="${user.userProfileUrl}" />
             </div>
             <div class="mdl-card__title">
-                <h4 class="mdl-card__title-text">Get going on Android</h4>
+                <h4 class="mdl-card__title-text" th:text="${user.userName}"/>
             </div>
             <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Four tips to make your switch to Android quick and easy</span>
+                <span class="mdl-typography--font-light mdl-typography--subhead">여가에 자기소개를 작성해주세요.</span>
             </div>
             <div class="mdl-card__actions">
                 <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                    Make the switch
+                    자세히 보기
                     <i class="material-icons">chevron_right</i>
                 </a>
             </div>

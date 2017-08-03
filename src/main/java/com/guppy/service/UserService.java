@@ -1,11 +1,14 @@
 package com.guppy.service;
 
+import com.google.common.collect.Lists;
 import com.guppy.repository.UserMapper;
 import com.guppy.repository.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * Created by kanghonggu on 2017. 7. 14..
@@ -30,6 +33,17 @@ public class UserService {
         userMapper.save(loginUser);
 
         return loginUser;
+    }
+
+
+    public List<User> findAll () {
+        List<User> users = userMapper.findAll();
+
+        if (users == null) {
+            return Lists.newArrayList();
+        }
+
+        return users;
     }
 
 }
