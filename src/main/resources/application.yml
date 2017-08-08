@@ -9,6 +9,9 @@ spring:
       enabled: true
       path: /h2-console
 
+server:
+  port: 3000
+
 facebook:
   client:
     clientId: 1861225734138705
@@ -25,3 +28,6 @@ logging:
   level:
     org.springframework.security: INFO
     com.guppy.repository: TRACE
+security:
+  basic:
+    enabled: true

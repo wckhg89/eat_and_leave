@@ -68,17 +68,4 @@ public class UserMapperTest {
         assertEquals(0, deleteUsers.size());
 
     }
-
-    @Test
-    public void principal_저장_테스트 () {
-        Principal principal = new Principal() {
-            @Override
-            public String getName() {
-                return "TestUser";
-            }
-        };
-
-
-    }
-
 }
