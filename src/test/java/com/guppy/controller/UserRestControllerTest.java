@@ -55,7 +55,7 @@ public class UserRestControllerTest {
     }
 
 
-    @Test
+    /*@Test
     public void 로그인시_유저_데이터_저장_테스트 () throws Exception {
         mockMvc.perform(MockMvcRequestBuilders
                 .post("/login/facebook").with(csrf()))
@@ -63,7 +63,7 @@ public class UserRestControllerTest {
                 .andExpect(status().is3xxRedirection());
                 //.andExpect(redirectedUrl("/user"))
 
-    }
+    }*/
 
 
 
