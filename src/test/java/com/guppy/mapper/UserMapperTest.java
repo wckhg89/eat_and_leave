@@ -47,15 +47,8 @@ public class UserMapperTest {
                 = memberMapper.findByUserName("stunstun");
 
         assertNotNull(userList);
-
     }
 
-    @Test
-    public void findOneTest () {
-        User user = memberMapper.findOne(1L);
-
-//        assertNotNull(user);
-    }
 
     @Test
     public void insertAndDelete() {

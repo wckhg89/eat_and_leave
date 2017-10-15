@@ -1,11 +1,3 @@
-/*CREATE TABLE IF NOT EXISTS `USER` (
-  `user_idx` INT(11) NOT NULL AUTO_INCREMENT,
-  `user_name` VARCHAR(50) NOT NULL,
-  `user_key` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1000000000;
-*/
-
 CREATE TABLE IF NOT EXISTS `user` (
   `user_idx` bigint(11) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(255) NOT NULL,
